@@ -38,6 +38,17 @@ function verificarLogin() {
     }
 }
 
-function redirecionarCadastro() {
-    window.location.href = 'cadastro.html';
+function redefinirSenha() {
+    var cpf = document.getElementById('cpfuser').value;
+    var novaSenha = document.getElementById('password').value;
+
+    var cpfSalvo = localStorage.getItem('cpf');
+
+    if (cpf == cpfSalvo) {
+        alert('Senha Alterada com Sucesso!')
+        localStorage.setItem("senha", novaSenha);
+        window.location.href = 'login.html';
+    } else {
+        alert('CPF Inválido!')
+    }
 }

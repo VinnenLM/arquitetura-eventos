@@ -6,7 +6,7 @@ function cadastrarUsuario() {
 
     if (nome != '' && municipio != '' && senha != '') {
 
-        if (cpf.lengt != 11) {
+        if (cpf.length != 11) {
             alert('CPF Inválido');
         } else {
             localStorage.setItem("nome", nome);
@@ -32,7 +32,8 @@ function verificarLogin() {
     var senhaSalva = localStorage.getItem('senha');
 
     if (cpf == cpfSalvo && senha == senhaSalva) {
-        alert('Deu bom')
+        alert('Login realizado com sucesso!')
+        window.location.href = 'home.html';
     } else {
         alert('Nome ou Senha inválidos')
     }
